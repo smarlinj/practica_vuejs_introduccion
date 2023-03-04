@@ -20,7 +20,22 @@
                     <h1 id="title" class="h1">{{ col.collection.title }}</h1>
                 </div>
             </div>
-           
+            <div class="card-group"style="margin-left:100px;margin-right: 100px">
+                <div class="card" v-for="obj in col.collection.items">
+                    <div class="card-body">
+                        <dl>
+                            <div v-for="pelis in obj.data">
+                                <dt>
+                                    <h4 class="card-title">{{pelis.prompt}}</h4>
+                                </dt>
+                                <dd>
+                                    <p class="card-text">{{pelis.value}}</p>
+                                </dd>
+                            </div>
+                        </dl>
+                        <a v-bind:href="obj.href" class="btn btn-dark text-light">Ver</a>
+                    </div>
+                </div>
             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
                - Cargar la librería de VueJS y el script ./js/script.js al final de la etiqueta <body>
@@ -38,4 +53,5 @@
 
     </body>
     
+    <script type="text/javascript" src="./js/script.js"></script>
 </html>
